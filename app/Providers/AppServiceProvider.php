@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\OrderOrganizer;
+use App\Contracts\Services\OrderOrganizer as OrderOrganizerContract;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,6 +16,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(OrderOrganizerContract::class, OrderOrganizer::class);
     }
 }

@@ -13,7 +13,5 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/', 'StockController@getProductInfo');
 
-    return $router->app->version();
-});
